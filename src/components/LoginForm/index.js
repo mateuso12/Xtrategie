@@ -18,7 +18,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../store";
 
 import { useForm, Controller } from "react-hook-form";
-import { sagaActions, sagaLogin } from "../../saga";
+import { sagaActions } from "../../saga";
 
 const useStyles = makeStyles((theme) => ({
   loginBox: {
@@ -91,10 +91,6 @@ export default function LoginForm() {
       return;
     }
     dispatch({payload:{ email: data.email, password: data.password}, type: sagaActions.SAGA_LOGIN })
-    // dispatch(sagaLogin({
-    //   email: data.email,
-    //   password: data.password
-    // }));
   };
 
   const classes = useStyles();
