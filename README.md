@@ -2,4 +2,4 @@
 
 Esta é minha resolução para o desafio
 
-Pode ser conferido o projeto no ar aqui: <a href=“http://exemplo.com/“>XChallenge</a>
+Pode ser conferido o projeto no ar aqui: <a href=“https://xchallenge.vercel.app“>XChallenge</a>
