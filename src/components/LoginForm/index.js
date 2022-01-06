@@ -15,9 +15,10 @@ import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 
 import { useSelector, useDispatch } from "react-redux";
-import { login, logout } from "../../store";
+import { logout } from "../../store";
 
 import { useForm, Controller } from "react-hook-form";
+import { sagaActions, sagaLogin } from "../../saga";
 
 const useStyles = makeStyles((theme) => ({
   loginBox: {
@@ -89,8 +90,11 @@ export default function LoginForm() {
       alert("Senha deve ter mais de 8 caracteres");
       return;
     }
-
-    dispatch(login({ email: data.email }));
+    dispatch({payload:{ email: data.email, password: data.password}, type: sagaActions.SAGA_LOGIN })
+    // dispatch(sagaLogin({
+    //   email: data.email,
+    //   password: data.password
+    // }));
   };
 
   const classes = useStyles();
